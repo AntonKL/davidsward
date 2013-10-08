@@ -1,0 +1,19 @@
+// @include rhythm($leader, $padding-leader, $padding-trailer, $trailer, $font-size)
+
+a,
+a:hover,
+a:active,
+a:visited
+  color: black
+  text-decoration: none
+
+p
+  @include rhythm(0, 0, 0, 1, 1em)
+
+h1
+  @include adjust-font-size-to(42px)
+  @include rhythm(0, 0, 0, 1, 42px)
+
+h2
+  @include adjust-font-size-to(24px)
+  @include rhythm(0, 0, 0, 1, 24px)

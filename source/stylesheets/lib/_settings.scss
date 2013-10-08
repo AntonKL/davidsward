@@ -1,0 +1,15 @@
+$debugfont: true;
+$legacy-support-for-mozilla: false;
+@include border-box-sizing;
+@include establish-baseline;
+
+html {
+  @include adjust-leading-to(4);
+}
+
+@if $debugfont == true {
+  $grid-background-baseline-height: $base-line-height;
+    body {
+      @include debug-vertical-alignment;
+    }
+}

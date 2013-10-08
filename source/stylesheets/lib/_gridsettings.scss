@@ -1,0 +1,17 @@
+// $showgrid: <boolean>;
+$showgrid: true;
+
+// $total-columns: <number>;
+$total-columns: 16;
+
+// $container-width: <length> | <boolean>;
+$container-width: 960px;
+
+// $container-style: <style>;c
+$container-style: static;
+
+@if $showgrid == true {
+  .container {
+    @include susy-grid-background;
+  }
+}

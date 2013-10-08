@@ -1,0 +1,95 @@
+@import "susy", "variables", "settings", "gridsettings", "mixins", "fonts"
+@import "compass/typography/lists/horizontal-list"
+
+body
+  background: $backgroundcolor
+
+.container
+  @include container
+  
+aside
+  @include span-columns(4)
+  @include clearfix()
+article
+  @include span-columns(12 omega)
+
+.logo
+  background: #161710
+  padding: 20px
+
+header
+  @include clearfix()
+  text-align: center
+  ul
+    @include horizontal-list(7px)
+    @include no-bullets()
+    border-bottom: 1px solid $bordercolor
+    margin: 4px 0 7px 0
+    padding-bottom: 7px
+
+.copyright
+  border-top: 1px solid $bordercolor
+  border-bottom: 1px solid $bordercolor
+  padding: 5px 0
+  color: #7a7a7a
+  margin-top: 150px
+
+  span
+    display: block
+    text-align: center
+    font-size: 0.7em
+    line-height: 1.5em
+
+
+@-webkit-keyframes slidy
+  20%
+    left: 0%
+  25%, 45%
+    left: -100%
+  50%, 70%
+    left: -200%
+  75%, 95%
+    left: -300%
+  100%
+    left: -400%
+
+div#window
+  position: relative
+  overflow: hidden
+  height: 526px
+
+figure#imagestrip
+  img
+    float: left
+    width: 20%
+  position: absolute
+  width: 500%
+  margin: 0
+  top: 0
+  left: 0
+  -webkit-animation: 30s slidy ease-in-out infinite
+
+.contact
+  .left
+    @include span-columns(3, 12)
+  .right
+    @include span-columns(9 omega, 12)
+  span
+    display: block
+
+.work section
+  @include span-columns(12 omega, 12)
+  margin-bottom: 1px 
+  border-left: 1px solid #232323
+  border-right: 1px solid #232323
+  border-bottom: 1px solid #232323
+  .panelheader
+    padding: 10px
+    background: #232323
+    color: white
+    cursor: pointer
+  .panelcontent
+    display: none
+    padding: 10px
+  .active
+    display: block
